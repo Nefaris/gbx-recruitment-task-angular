@@ -9,6 +9,7 @@ import {RepoService} from '../../services/repo.service';
 export class SearchBarComponent implements OnInit {
 
   username = '';
+  isLoading: boolean;
 
   constructor(private repoService: RepoService) {
   }
@@ -18,5 +19,6 @@ export class SearchBarComponent implements OnInit {
 
   onSubmit() {
     this.repoService.getRepos(this.username);
+    this.repoService.isLoading.subscribe(value => this.isLoading = value);
   }
 }
