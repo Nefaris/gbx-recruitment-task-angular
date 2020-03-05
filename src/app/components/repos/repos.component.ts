@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
+import {Repo} from 'src/app/models/Repo';
+import {RepoService} from 'src/app/services/repo.service';
 
 @Component({
   selector: 'app-repos',
@@ -7,9 +9,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ReposComponent implements OnInit {
 
-  constructor() { }
+  repoList: Repo[];
 
-  ngOnInit(): void {
+  constructor(private repoService: RepoService) {
   }
 
+  ngOnInit(): void {
+    this.repoService.data$.subscribe(value => {
+      this.repoList = value;
+    });
+  }
 }

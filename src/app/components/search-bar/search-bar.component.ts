@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
+import {RepoService} from '../../services/repo.service';
 
 @Component({
   selector: 'app-search-bar',
@@ -7,9 +8,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SearchBarComponent implements OnInit {
 
-  constructor() { }
+  username = '';
+
+  constructor(private repoService: RepoService) {
+  }
 
   ngOnInit(): void {
   }
 
+  onSubmit() {
+    this.repoService.next(this.username);
+  }
 }

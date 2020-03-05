@@ -1,7 +1,3 @@
 <div class="repos">
-    <app-repo class="repo-wrapper"></app-repo>
-    <app-repo class="repo-wrapper"></app-repo>
-    <app-repo class="repo-wrapper"></app-repo>
-    <app-repo class="repo-wrapper"></app-repo>
-    <app-repo class="repo-wrapper"></app-repo>
+    <app-repo *ngFor="let repo of repoList" [repo]="repo"></app-repo>
 </div>

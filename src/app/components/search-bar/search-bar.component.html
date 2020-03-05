@@ -3,8 +3,8 @@
 
     <div class="searchbar__input-wrapper">
         <p class="searchbar__input-wrapper__label">Wpisz nazwę użytkownika repo</p>
-        <form class="searchbar__input-wrapper__form">
-            <input type="text" v-model="username" class="searchbar__input-wrapper__form__input" aria-label="Nazwa użytkownika">
+        <form (ngSubmit)="onSubmit()" class="searchbar__input-wrapper__form">
+            <input type="text" [(ngModel)]="username" name="username" class="searchbar__input-wrapper__form__input" aria-label="Nazwa użytkownika">
             <input type="submit" class="searchbar__input-wrapper__form__submit" value="" aria-label="Szukaj">
         </form>
     </div>
