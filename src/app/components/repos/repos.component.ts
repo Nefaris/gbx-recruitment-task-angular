@@ -10,13 +10,15 @@ import {RepoService} from 'src/app/services/repo.service';
 export class ReposComponent implements OnInit {
 
   repoList: Repo[];
+  isLoading: boolean;
+  errorInfo: string;
 
   constructor(private repoService: RepoService) {
   }
 
   ngOnInit(): void {
-    this.repoService.data$.subscribe(value => {
-      this.repoList = value;
-    });
+    this.repoService.data$.subscribe(value => this.repoList = value);
+    this.repoService.isLoading.subscribe(value => this.isLoading = value);
+    this.repoService.errorInfo.subscribe(value => this.errorInfo = value);
   }
 }

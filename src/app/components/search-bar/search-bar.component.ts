@@ -17,6 +17,6 @@ export class SearchBarComponent implements OnInit {
   }
 
   onSubmit() {
-    this.repoService.next(this.username);
+    this.repoService.getRepos(this.username);
   }
 }

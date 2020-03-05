@@ -11,9 +11,20 @@
   align-items: center;
   overflow: hidden auto;
 
-
   display: grid;
   grid-template-columns: repeat(2, 555px);
   grid-auto-rows: 130px;
   grid-gap: 20px;
+
+  &--loading,
+  &--error {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  &__error-info {
+    color: #848484;
+    margin: 0;
+  }
 }

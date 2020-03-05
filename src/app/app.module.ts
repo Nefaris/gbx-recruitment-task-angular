@@ -9,6 +9,7 @@ import { BoardComponent } from './components/board/board.component';
 import { SearchBarComponent } from './components/search-bar/search-bar.component';
 import { ReposComponent } from './components/repos/repos.component';
 import { RepoComponent } from './components/repo/repo.component';
+import { LoaderComponent } from './components/loader/loader.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import { RepoComponent } from './components/repo/repo.component';
     BoardComponent,
     SearchBarComponent,
     ReposComponent,
-    RepoComponent
+    RepoComponent,
+    LoaderComponent
   ],
   imports: [
     BrowserModule,

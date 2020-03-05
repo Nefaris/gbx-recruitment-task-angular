@@ -1,3 +1,5 @@
-<div class="repos">
-    <app-repo *ngFor="let repo of repoList" [repo]="repo"></app-repo>
+<div class="repos" [ngClass]="{'repos--loading': isLoading, 'repos--error': errorInfo}">
+  <app-loader *ngIf="isLoading"></app-loader>
+  <p class="repos__error-info" *ngIf="errorInfo">{{ errorInfo }}</p>
+  <app-repo *ngFor="let repo of repoList" [repo]="repo"></app-repo>
 </div>
