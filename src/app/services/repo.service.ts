@@ -1,13 +1,14 @@
 import {Injectable} from '@angular/core';
 import {HttpClient} from '@angular/common/http';
 import {BehaviorSubject, Subject} from 'rxjs';
+import {Repo} from '../models/Repo';
 
 @Injectable({
   providedIn: 'root'
 })
 export class RepoService {
 
-  private source = new Subject<any[]>();
+  private source = new Subject<Repo[]>();
   data$ = this.source.asObservable();
 
   public isLoading = new BehaviorSubject<boolean>(false);
